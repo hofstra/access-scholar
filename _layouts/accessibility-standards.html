@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <a href="{{ site.baseurl }}/">Home</a>
+    <h1>{{ page.title }}</h1>
+
+    <ul>
+{% for standards in site.categories.accessibility-standards %}
+        <li><a href="{{ site.baseurl }}{{ standards.url }}">{{ standards.title }}</a></li>
+{% endfor %}
+    </ul>
+
+    <h2>Web Accessibility Standards</h2>
+
+    <table width="100%">
+        <tr>
+            <th>Specific Web Accessibility Standard/Guideline/Criteria</th>
+            <th>The Web Content Accessibility Guidelines (WCAG)</th>
+            <th>Section 508 Standards for Electronic and Information Technology</th>
+            <th>The National Federation for the Blind Criteria for Nonvisual Accessibility</th>
+        </tr>
+{% for criterion in site.categories.criteria %}
+        <tr class="{% cycle 'odd', 'even' %}">
+            <td>{{ criterion.title }}</td>
+            <td>{{criterion.wcag}}</td>
+            <td>{{criterion.section_508}}</td>
+            <td>{% for nfb_criterion in site.categories.nfb-criteria %}{% if nfb_criterion.title == criterion.nfb %}<a href="{{ site.baseurl }}{{ nfb_criterion.url }}">{{criterion.nfb}}</a>{% endif %}{% endfor %}</td>
+        </tr>
+{% endfor %}
+    </table>
+
+    <p>Note that any values used in the NFB Criteria column (<span class="code">nfb</span>) entries need a corresponding <span class="code">nfb-criteria/_posts</span> entry (file) for the links here to work, where the <span class="code">title</span> value in that file explicitly matches the <span class="code">nfb</span> value, for the <span class="code">nfb</span> value to appear here.</p>
+
+    <p>Last built: {{site.time}}</p>
+</body>
+</html>

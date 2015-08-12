@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+
+    <ul>
+        <li><a href="{{ site.baseurl }}/projects">Digital Humanities Projects Scorecard</a></li>
+        <li><a href="{{ site.baseurl }}/accessibility-standards">Web Accessibility Standards</a></li>
+    </ul>
+
+    <h3>Tags</h3>
+    <ul>
+{% for tag in site.categories.tags %}
+        <li><a href="{{ site.baseurl }}{{ tag.url }}">{{ tag.title }}</a></li>
+{% endfor %}
+    </ul>
+
+    <p>Last built: {{site.time}}</p>
+</body>
+</html>

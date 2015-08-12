@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <a href="{{ site.baseurl }}/">Home</a>
+    <h1>{{ page.title }}</h1>
+
+{% for criterion in site.categories.nfb-criteria %}
+        <h3>{{ criterion.title }}</h3>
+        {{ criterion.content }}
+{% endfor %}
+
+    <p>Last built: {{site.time}}</p>
+</body>
+</html>

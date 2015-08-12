@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <a href="{{ site.baseurl }}/">Home</a><br />
+    <a href="{{ site.baseurl }}/nfb-criteria">All NFB Criteria</a>
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+
+    <p>Last built: {{site.time}}</p>
+</body>
+</html>

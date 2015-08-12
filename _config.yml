@@ -1,0 +1,26 @@
+# Site settings
+title: Access Scholar
+email: drc@hofstra.edu
+description: "Informational website for the Access Scholar project"
+baseurl: ""
+url: "http://hofstradrc.org"
+twitter_username:
+github_username:  hofstra
+google_analytics: false
+
+# Where things are
+destination:      ./_site
+# source:           ./_build
+
+# Handling Reading
+exclude:          ["templates", "Gemfile", "Gemfile.lock", "README.md", ".gitignore"]
+
+# Conversion
+markdown:         kramdown
+
+# Outputting
+permalink: /:categories/:title/
+
+# Compensating for gh-pages project site
+baseurl: /access-scholar
+# https://github.com/jekyll/jekyll/issues/332

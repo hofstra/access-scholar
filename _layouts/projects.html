@@ -41,7 +41,7 @@
         <tr class="{% cycle 'odd', 'even' %}">
             <td>{{project.education_level}}</td>
             <td>{{project.research_domain}}</td>
-            <td>{{project.url}}</td>
+            <td><a href="{{project.site_url}}">{{project.site_url}}</a></td>
             <td>{{ project.title }}</td>
             <td>{{project.institution}}</td>
             <td>{{project.topic}}</td>

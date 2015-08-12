@@ -3,7 +3,7 @@ layout: project
 title: EBSCO Ebook Collection
 education_level: Graduate and Post-Graduate
 research_domain: General; Multidisciplinary
-url: http://web.b.ebscohost.com
+site_url: http://web.b.ebscohost.com
 institution: EBSCO Host
 topic: Multidisciplinary ebooks, including academic monographs
 tags:

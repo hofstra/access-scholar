@@ -3,7 +3,7 @@ layout: project
 title: Dictionary of Literary Biography
 education_level: Undergraduate and Graduate
 research_domain: Literature
-url: http://go.galegroup.com
+site_url: http://go.galegroup.com
 institution: Gale Group
 topic: Literary Biography
 tags:

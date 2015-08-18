@@ -3,7 +3,7 @@ layout: project
 title: Project Muse
 education_level: Undergraduate, Graduate, & Post-Graduate
 research_domain: General; Multidisciplinary
-site_url: muse.jhu.edu
+site_url: http://muse.jhu.edu
 institution: Johns Hopkins University Press
 topic: Multidisciplinary scholarly articles and book chapters
 tags:

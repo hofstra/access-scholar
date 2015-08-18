@@ -3,7 +3,7 @@ layout: project
 title: Lost Plays Database
 education_level: Graduate and Post-Graduate
 research_domain: English Literature
-site_url: lostplays.org
+site_url: http://lostplays.org
 institution: Wiki Development at the University of Melbourne
 topic: Lost Early Modern English Plays
 tags:

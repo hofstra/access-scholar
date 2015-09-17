@@ -3,28 +3,57 @@
 <head>
 {% include head.html %}
     <title>{{ page.title }}</title>
+    <style type="text/css">
+        tr.odd td {
+            background: #efefef;
+        }
+        td {
+            font-size: 14px;
+            padding: 4px;
+            vertical-align: top;
+        }
+            td p {
+                margin: 0;
+                padding: 0;
+            }
+    </style>
 </head>
 <body>
-    <a href="{{ site.baseurl }}/">Home</a>
-    <h1>Tag: {{ page.title }}</h1>
+<div class="outer">
 
-    {{ content }}
-    <table width="100%">
-        <tr>
-            <th>Education Level</th>
-            <th>Research Domain</th>
-            <th>URL</th>
-            <th>Project Name</th>
-            <th>Project Institution</th>
-            <th>Project Topic</th>
-            <th>Tags</th>
-            <th>Wave Report</th>
-            <th>Visual</th>
-            <th>Auditory</th>
-            <th>Fine Motor</th>
-            <th>Cognitive</th>
-            <th>Description</th>
-        </tr>
+{% include brand-bar.html %}
+{% include main-nav.html %}
+    <div class="wrapper content-wrapper">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+        <ul>
+    {% for standards in site.categories.accessibility-standards %}
+            <li><a href="{{ site.baseurl }}{{ standards.url }}">{{ standards.title }}</a></li>
+    {% endfor %}
+        </ul>
+
+        <h2>Web Accessibility Standards: {{ page.title }}</h2>
+    </div>
+
+    <div class="data-table">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Education Level</th>
+                <th>Research Domain</th>
+                <th>URL</th>
+                <th>Project Name</th>
+                <th>Project Institution</th>
+                <th>Project Topic</th>
+                <th>Tags</th>
+                <th>Wave Report</th>
+                <th>Visual</th>
+                <th>Auditory</th>
+                <th>Fine Motor</th>
+                <th>Cognitive</th>
+                <th>Description</th>
+            </tr>
+        </thead>
 {% for project in site.categories.projects %}
 {% for tag in project.tags %}
 {% if tag == page.title %}
@@ -46,8 +75,34 @@
 {% endif %}
 {% endfor %}
 {% endfor %}
-    </table>
+        </tbody>
+        </table>
+        <!-- A bit of redundant entry is required to make a pure CSS solution work... -->
+        <style type="text/css">
+            @media screen and (max-width: 940px) {
+                td:nth-of-type(1):before { content: "Education Level"; }
+                td:nth-of-type(2):before { content: "Research Domain"; }
+                td:nth-of-type(3):before { content: "URL"; }
+                td:nth-of-type(4):before { content: "Project Name"; }
+                td:nth-of-type(5):before { content: "Project Institution"; }
+                td:nth-of-type(6):before { content: "Project Topic"; }
+                td:nth-of-type(7):before { content: "Tags"; }
+                td:nth-of-type(8):before { content: "Wave Report"; }
+                td:nth-of-type(9):before { content: "Visual"; }
+                td:nth-of-type(10):before { content: "Auditory"; }
+                td:nth-of-type(11):before { content: "Fine Motor"; }
+                td:nth-of-type(12):before { content: "Cognitive"; }
+                td:nth-of-type(13):before { content: "Description"; }
+            }
+        </style>
+    </div>
+    <div class="wrapper content-wrapper">
 
-    <p>Last built: {{site.time}}</p>
+        <p>Note that any tags used in <span class="code">projects/_posts</span> entries need a corresponding <span class="code">tags/_posts</span> entry (file) for the links here to work.</p>
+
+        <p>Last built: {{site.time}}</p>
+    </div>
+</div>
+{% include footer.html %}
 </body>
 </html>

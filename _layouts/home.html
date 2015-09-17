@@ -5,7 +5,15 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    <h1>{{ page.title }}</h1>
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
+
+        <h1>{{ page.title }}</h1>
+
+        {{ content }}
 
     <ul>
         <li><a href="{{ site.baseurl }}/projects">Digital Humanities Projects Scorecard</a></li>
@@ -13,12 +21,12 @@
     </ul>
 
     <h3>Tags</h3>
-    <ul>
-{% for tag in site.categories.tags %}
-        <li><a href="{{ site.baseurl }}{{ tag.url }}">{{ tag.title }}</a></li>
-{% endfor %}
-    </ul>
 
-    <p>Last built: {{site.time}}</p>
+{% include tag-cloud.html %}
+
+        <p>Last built: {{site.time}}</p>
+    </div>
+</div>
+{% include footer.html %}
 </body>
 </html>

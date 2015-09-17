@@ -5,12 +5,21 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    <a href="{{ site.baseurl }}/">Home</a><br />
-    <a href="{{ site.baseurl }}/nfb-criteria">All NFB Criteria</a>
-    <h1>{{ page.title }}</h1>
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
 
-    {{ content }}
+        <h1>{{ page.title }}</h1>
 
-    <p>Last built: {{site.time}}</p>
+        <p><a href="{{ site.baseurl }}/nfb-criteria">All NFB Criteria</a></p>
+
+        {{ content }}
+
+        <p>Last built: {{site.time}}</p>
+    </div>
+</div>
+{% include footer.html %}
 </body>
 </html>

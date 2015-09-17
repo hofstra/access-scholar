@@ -5,14 +5,24 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    <a href="{{ site.baseurl }}/">Home</a>
-    <h1>{{ page.title }}</h1>
+<div class="outer">
+    {% include brand-bar.html %}
+    {% include main-nav.html %}
+    {% include header-img.html %}
+    <div class="wrapper content-wrapper">
+
+        <h1>{{ page.title }}</h1>
+
+        {{ content }}
 
 {% for criterion in site.categories.nfb-criteria %}
         <h3>{{ criterion.title }}</h3>
         {{ criterion.content }}
 {% endfor %}
 
-    <p>Last built: {{site.time}}</p>
+        <p>Last built: {{site.time}}</p>
+    </div>
+</div>
+{% include footer.html %}
 </body>
 </html>

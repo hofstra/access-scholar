@@ -9,23 +9,53 @@
     {% include brand-bar.html %}
     {% include main-nav.html %}
     {% include header-img.html %}
-    <div class="wrapper content-wrapper">
-
-        <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
+    {% if content != '' %}<div class="wrapper content-wrapper">
 
         {{ content }}
 
-    <ul>
-        <li><a href="{{ site.baseurl }}/projects">Digital Humanities Projects Scorecard</a></li>
-        <li><a href="{{ site.baseurl }}/accessibility-standards">Web Accessibility Standards</a></li>
-        <li><a href="{{ site.baseurl }}/nfb-criteria">NFB Criteria</a></li>
-    </ul>
+    </div>{% endif %}
+    <div class="wrapper content-wrapper">
 
-    <h3>Tags</h3>
+        <h2>Digital Humanities Project Scorecard</h2>
+        {% assign projects = site.categories.scorecard %}
+        <div class="data-table">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+        {% for project in projects limit:5 %}
+            <tr class="{% cycle 'odd', 'even' %}">
+                <td>{{ project.title }}</td>
+                <td><a href="{{project.site_url}}">{{project.site_url}}</a></td>
+            </tr>
+        {% endfor %}
+            </tbody>
+            </table>
+            <!-- A bit of redundant entry is required to make a pure CSS solution work... -->
+            <style type="text/css">
+                @media screen and (max-width: 940px) {
+                    td:nth-of-type(1):before { content: "Project Name"; }
+                    td:nth-of-type(2):before { content: "URL"; }
+                }
+            </style>
+        </div>
+        <p><a href="{{ site.baseurl }}/scorecard">View the Digital Humanities Project Scorecard</a></p>
+    </div>
+    <div class="wrapper content-wrapper">
+        <h3>Submit a Project</h3>
+        <p>Are you working on a project you&rsquo;d like to have graded for Accessibility support? Would you like to see how a project you've come across supports Accessibility? Submit the following details and we&rsquo;ll consider your request for evaluation.</p>
 
-{% include tag-cloud.html %}
+        {% include submit-project.html %}
 
-        <p>Last built: {{site.time}}</p>
+    </div>
+    <div class="wrapper content-wrapper">
+        <h2>Web Accessibility Standards</h2>
+        <p>We&rsquo;ve begun to curate and summarize how various existing standards and guidelines apply to web design and content considerations, how they differ, and how to achieve compliance.</p>
+        <p><a class="cta" href="{{ site.baseurl }}/web-accessibility-standards">View the Summary</a> and curated guidelines.</p>
     </div>
 </div>
 {% include footer.html %}

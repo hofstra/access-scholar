@@ -18,6 +18,9 @@ body {
     div.content-wrapper ul li {
         font-family: Vollkorn, serif;
     }
+    div.content-wrapper p:last-child {
+        margin-bottom: 0;
+    }
     .footer p {
         font-family: Montserrat, sans-serif;
     }

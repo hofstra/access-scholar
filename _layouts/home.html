@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-{% include head.html %}
+	{% include head.html %}
     <title>{{ page.title }}</title>
 </head>
 <body>
@@ -9,7 +9,10 @@
     {% include brand-bar.html %}
     {% include main-nav.html %}
     {% include header-img.html %}
-    <h1>{{ page.title }}</h1>
+
+	{% include searchbox placeholder="Search for:"%}
+
+	<h1>{{ page.title }}</h1>
     {% if content != '' %}<div class="wrapper content-wrapper">
 
         {{ content }}

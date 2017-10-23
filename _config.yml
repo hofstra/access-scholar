@@ -12,16 +12,21 @@ email: drc@hofstra.edu
 description: Informational website for the Access Scholar project
 baseurl: "/access-scholar"
 url: http://hofstradrc.org
-twitter_username: 
+twitter_username:
 github_username: hofstra
 google_analytics: false
 destination: "./_site"
+include:
+- _pages
 exclude:
 - templates
 - Gemfile
 - Gemfile.lock
 - README.md
 - ".gitignore"
+- preflight
 markdown: kramdown
 permalink: "/:categories/:title/"
 asset_url: https://hofstra.github.io/design-framework
+sass:
+  sass_dir: ui/css

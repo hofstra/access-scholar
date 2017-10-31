@@ -52,10 +52,12 @@
             <li><a href="{{ site.baseurl }}/nfb-criteria">NFB Criteria</a></li>
             <li>[stub] Section 508</li>
         </ul>
+        {% comment %}
         <p>We need to determine how Standards content will be maintained. There are two implementations here: One is files under this directory, as <span class="code">_posts</span>; The other is a link to a file with its own <span class="code">_posts</span>, as NFB Criteria has been handled.</p>
         <p>Note that any values used in the NFB Criteria column (<span class="code">nfb</span>) entries need a corresponding <span class="code">nfb-criteria/_posts</span> entry (file) for the links here to work, where the <span class="code">title</span> value in that file explicitly matches the <span class="code">nfb</span> value, for the <span class="code">nfb</span> value to appear here.</p>
         <p>To edit the data table, create posts in the <span class="code">criteria/_posts</span> directory.</p>
         <p>Last built: {{site.time}}</p>
+        {% endcomment %}
     </div>
 </div>
 {% include footer.html %}

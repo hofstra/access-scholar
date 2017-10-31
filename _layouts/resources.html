@@ -19,7 +19,9 @@
         <p><strong><a href="{{ resource.link }}">{{ resource.title }}</a></strong><br />{{ resource.blurb }}</p>
 {% endfor %}
 
-        <p>Last built: {{site.time}}</p>
+{% comment %}
+<p>Last built: {{site.time}}</p>
+{% endcomment %}
     </div>
 </div>
 {% include footer.html %}

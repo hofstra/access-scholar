@@ -50,7 +50,9 @@
             <li><a href="{{ site.baseurl }}{{ standards.url }}">{{ standards.title }}</a></li>
     {% endfor %}
             <li><a href="{{ site.baseurl }}/nfb-criteria">NFB Criteria</a></li>
+            {% comment %}
             <li>[stub] Section 508</li>
+            {% endcomment %}
         </ul>
         {% comment %}
         <p>We need to determine how Standards content will be maintained. There are two implementations here: One is files under this directory, as <span class="code">_posts</span>; The other is a link to a file with its own <span class="code">_posts</span>, as NFB Criteria has been handled.</p>

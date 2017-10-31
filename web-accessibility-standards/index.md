@@ -4,4 +4,4 @@ layout: accessibility-standards
 active: web-accessibility-standards
 ---
 
-Edit text here about the Web Accessibility Standards synthesis.
+<!-- Edit text here about the Web Accessibility Standards synthesis. -->
